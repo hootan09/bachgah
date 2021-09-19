@@ -1,5 +1,5 @@
 import React , {useState} from 'react';
-import { View, Text, TouchableOpacity, StyleSheet,SafeAreaView,ScrollView, Image, FlatList, Dimensions } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet,SafeAreaView,ScrollView, Image, } from 'react-native';
 
 import colors from '../assets/colors/colors'
 import Feather from 'react-native-vector-icons/Feather';
@@ -7,13 +7,14 @@ import Entypo from 'react-native-vector-icons/Entypo';
 
 import menuImg from '../assets/images/menu.png';
 
-const height = Dimensions.get('window').height * 0.535;
+import Slider from './Slider';
+import sliderImages from '../assets/data/sliderImages';
+
 
 Feather.loadFont();
 Entypo.loadFont();
 
 const Home = ({navigation}) => {
-    
     return (
             <SafeAreaView style={styles.container}>
                 <ScrollView>
@@ -40,8 +41,10 @@ const Home = ({navigation}) => {
                                 <Image source={menuImg} style={styles.menuIcon}/>
                             </TouchableOpacity>
                         </View>
-
                     </View>
+
+                    {/* Slider */}
+                    <Slider data={sliderImages}/>
 
                 </ScrollView>
             </SafeAreaView>
@@ -150,7 +153,6 @@ const styles = StyleSheet.create({
             rotateY: "180deg"
         }]
     },
-
 })
 
 export default Home
