@@ -46,6 +46,23 @@ const Home = ({navigation}) => {
                     {/* Slider */}
                     <Slider data={sliderImages}/>
 
+                    {/* Daily Practice */}
+                    <View style={styles.dailyPracticeWrapper}>
+                        <View style={styles.titleWrapper}>
+                            <TouchableOpacity
+                                onPress={()=> console.log("ShowAll")}
+                            >
+                                <View style={styles.showAllWrapper}>
+                                    <View style={styles.showAllIconWrapper}>
+                                        <Feather name="arrow-left" size={16} color={colors.black} style={styles.showAllIcon} />
+                                    </View>
+                                    <Text style={styles.showAllTxt}>نمایش همه</Text>
+                                </View>
+                            </TouchableOpacity>
+                            <Text style={styles.dailyTitle}>● تمرین های روزانه</Text>
+                        </View>
+                    </View>
+
                 </ScrollView>
             </SafeAreaView>
     )
@@ -152,6 +169,52 @@ const styles = StyleSheet.create({
         transform: [{
             rotateY: "180deg"
         }]
+    },
+    dailyPracticeWrapper: {
+        marginHorizontal: 24,
+        marginVertical: 24,
+    },
+    titleWrapper: {
+        flexDirection: "row",
+        justifyContent: "space-between",
+        alignItems: "center",
+    },
+    dailyTitle: {
+        fontFamily: "IRANSansMobile_Bold",
+        fontSize: 20,
+    },
+    showAllWrapper: {
+        flexDirection: "row",
+        marginHorizontal: 30,
+        justifyContent: "center",
+        alignItems: "center",
+    },
+    showAllTxt: {
+        fontFamily: "IRANSansMobile_Light",
+        fontSize: 16,
+        color: colors.darkGray,
+    },
+    showAllIconWrapper: {
+        height: 20,
+        width: 20,
+        right: 10,
+        alignItems: "center",
+        justifyContent: "center",
+        borderRadius: 32,
+        backgroundColor: colors.white,
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 0,
+            height: 2,
+        },
+        shadowOpacity: 0.15,
+        shadowRadius: 3.84,
+        elevation: 3,
+    },
+    showAllIcon: {
+        color: colors.darkGray,
+        alignItems: "center",
+        justifyContent: "center",
     },
 })
 

@@ -62,17 +62,18 @@ const styles = StyleSheet.create({
         paddingVertical: 10,
     },
     scrollWrapper:{
-
     },
     sliderImage: {
         borderRadius: 32,
         marginHorizontal: 10,
         width: Width * 0.85,
-        height: Height * 0.25
+        height: Height * 0.25,
     },
     dotWrapper: {
         bottom: 0,
         flexDirection: "row",
+        // alignItems: "center",
+        // justifyContent: "center"
         alignSelf: "center",
     },
     dotIconActive: {
