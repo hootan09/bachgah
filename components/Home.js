@@ -21,8 +21,6 @@ Entypo.loadFont();
 const Home = ({navigation}) => {
     return (
             <SafeAreaView style={styles.container}>
-                <ScrollView>
-                    {/* Header */}
                     <View style={styles.headerWrapper}>
 
                         {/* Left Menu */}
@@ -46,6 +44,8 @@ const Home = ({navigation}) => {
                             </TouchableOpacity>
                         </View>
                     </View>
+                <ScrollView>
+                    {/* Header */}
 
                     {/* Slider */}
                     <Slider data={sliderImages}/>
