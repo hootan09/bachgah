@@ -34,7 +34,7 @@ const Slider = ({data}) => {
                             key={index}
                             source={item.image} 
                             resizeMode="stretch" 
-                            style={styles.sliderImage} 
+                            style={styles.sliderImage}
                             />
                 ))
                 }
@@ -62,7 +62,7 @@ const styles = StyleSheet.create({
         paddingVertical: 10,
     },
     scrollWrapper:{
-        scaleX:-1
+        scaleX:-1,
     },
     sliderImage: {
         borderRadius: 32,

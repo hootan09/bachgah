@@ -109,7 +109,7 @@ const styles = StyleSheet.create({
         justifyContent: "center",
     },
     flatListWrapper: {
-        transform: [{ scaleX: -1 }]
+        transform: [{ scaleX: -1 }],
     },
     dailyPracticeItemsWrapper: {
         marginHorizontal: 5,
@@ -125,12 +125,16 @@ const styles = StyleSheet.create({
         // paddingVertical: 15,
         marginRight: 12,
         borderRadius: 16,
+        borderWidth: 1,
+        borderColor: colors.gray,
     },
     iconItemsWrapper: {
         width: 90,
         height: 90,
         backgroundColor: colors.white,
         borderRadius: 64,
+        borderWidth: 1,
+        borderColor: colors.gray,
         justifyContent: "center",
         alignItems: "center",
         transform: [{ scaleX: -1 }]
@@ -140,5 +144,8 @@ const styles = StyleSheet.create({
         fontFamily: "IRANSansMobile_Medium",
         fontSize: 20,
         color: colors.lightGray,
+        textShadowColor:colors.lightGray,
+        textShadowOffset:{width: 1, height: 1},
+        textShadowRadius:8,
     },
 })

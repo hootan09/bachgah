@@ -21,29 +21,28 @@ Entypo.loadFont();
 const Home = ({navigation}) => {
     return (
             <SafeAreaView style={styles.container}>
-                    <View style={styles.headerWrapper}>
-
-                        {/* Left Menu */}
-                        <View style={styles.menuLeftWrapper}>
-                            <View style={styles.shopIconWrapper}>
-                                <Feather name="shopping-bag" size={24} color={colors.black} style={styles.shopIcon} />
-                            </View>
-                            <View style={styles.notifIconWrapper}>
-                                <Feather name="bell" size={24} color={colors.black} style={styles.notifIcon} />
-                            <View style={styles.badgeWrapper}>
-                                <Text style={styles.badgeTxt}>99</Text>
-                            </View>
-                            </View>
+                <View style={styles.headerWrapper}>
+                    {/* Left Menu */}
+                    <View style={styles.menuLeftWrapper}>
+                        <View style={styles.shopIconWrapper}>
+                            <Feather name="shopping-bag" size={24} color={colors.black} style={styles.shopIcon} />
                         </View>
-                        {/* Right Menu */}
-                        <View style={styles.menuRightWrapper}>
-                            <TouchableOpacity
-                                onPress={()=>console.log('hello')}
-                            >
-                                <Image source={menuImg} style={styles.menuIcon}/>
-                            </TouchableOpacity>
+                        <View style={styles.notifIconWrapper}>
+                            <Feather name="bell" size={24} color={colors.black} style={styles.notifIcon} />
+                        <View style={styles.badgeWrapper}>
+                            <Text style={styles.badgeTxt}>99</Text>
+                        </View>
                         </View>
                     </View>
+                    {/* Right Menu */}
+                    <View style={styles.menuRightWrapper}>
+                        <TouchableOpacity
+                            onPress={()=>console.log('hello')}
+                        >
+                            <Image source={menuImg} style={styles.menuIcon}/>
+                        </TouchableOpacity>
+                    </View>
+                </View>
                 <ScrollView>
                     {/* Header */}
 
