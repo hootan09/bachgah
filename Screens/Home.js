@@ -7,8 +7,8 @@ import Entypo from 'react-native-vector-icons/Entypo';
 
 import menuImg from '../assets/images/menu.png';
 
-import Slider from './Slider';
-import SectionList from './SectionList';
+import Slider from '../components/Slider';
+import SectionList from '../components/SectionList';
 
 import sliderImages from '../assets/data/sliderImages';
 import { dailyParcticeItems, bestBachgahItems } from '../assets/data/sectionListData';

@@ -45,7 +45,7 @@ const About = () => {
                             <View style={styles.teacherTopWrapper}>
                                 <View style={styles.rateWrapper}>
                                     <Stars
-                                        display={star}
+                                        display={+star}
                                         count={5}
                                         starSize={18}
                                         half={true}

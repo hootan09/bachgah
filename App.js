@@ -10,12 +10,12 @@ import colors from './assets/colors/colors';
 import Entypo from 'react-native-vector-icons/Entypo';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
-import Home from './components/Home';
-import Details from './components/Details';
-import Profile from './components/Profile';
-import Liked from './components/Liked';
-import About from './components/About';
-import Splash from './components/Splash';
+import Home from './Screens/Home';
+import Details from './Screens/Details';
+import Profile from './Screens/Profile';
+import Liked from './Screens/Liked';
+import About from './Screens/About';
+import Splash from './Screens/Splash';
 
 Entypo.loadFont();
 MaterialCommunityIcons.loadFont();
