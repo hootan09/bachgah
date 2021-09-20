@@ -8,7 +8,11 @@ import Entypo from 'react-native-vector-icons/Entypo';
 import menuImg from '../assets/images/menu.png';
 
 import Slider from './Slider';
+import SectionList from './SectionList';
+
 import sliderImages from '../assets/data/sliderImages';
+import { dailyParcticeItems, bestBachgahItems } from '../assets/data/sectionListData';
+
 
 
 Feather.loadFont();
@@ -47,21 +51,18 @@ const Home = ({navigation}) => {
                     <Slider data={sliderImages}/>
 
                     {/* Daily Practice */}
-                    <View style={styles.dailyPracticeWrapper}>
-                        <View style={styles.titleWrapper}>
-                            <TouchableOpacity
-                                onPress={()=> console.log("ShowAll")}
-                            >
-                                <View style={styles.showAllWrapper}>
-                                    <View style={styles.showAllIconWrapper}>
-                                        <Feather name="arrow-left" size={16} color={colors.black} style={styles.showAllIcon} />
-                                    </View>
-                                    <Text style={styles.showAllTxt}>نمایش همه</Text>
-                                </View>
-                            </TouchableOpacity>
-                            <Text style={styles.dailyTitle}>● تمرین های روزانه</Text>
-                        </View>
-                    </View>
+                    <SectionList
+                        title="تمرین های روزانه"
+                        data={dailyParcticeItems}
+                        navigation={navigation}
+                    />
+
+                    {/* Best Bachgah */}
+                    <SectionList
+                        title="برترین باشگاه ها"
+                        data={bestBachgahItems}
+                        navigation={navigation}
+                    />
 
                 </ScrollView>
             </SafeAreaView>
@@ -169,52 +170,6 @@ const styles = StyleSheet.create({
         transform: [{
             rotateY: "180deg"
         }]
-    },
-    dailyPracticeWrapper: {
-        marginHorizontal: 24,
-        marginVertical: 24,
-    },
-    titleWrapper: {
-        flexDirection: "row",
-        justifyContent: "space-between",
-        alignItems: "center",
-    },
-    dailyTitle: {
-        fontFamily: "IRANSansMobile_Bold",
-        fontSize: 20,
-    },
-    showAllWrapper: {
-        flexDirection: "row",
-        marginHorizontal: 30,
-        justifyContent: "center",
-        alignItems: "center",
-    },
-    showAllTxt: {
-        fontFamily: "IRANSansMobile_Light",
-        fontSize: 16,
-        color: colors.darkGray,
-    },
-    showAllIconWrapper: {
-        height: 20,
-        width: 20,
-        right: 10,
-        alignItems: "center",
-        justifyContent: "center",
-        borderRadius: 32,
-        backgroundColor: colors.white,
-        shadowColor: "#000",
-        shadowOffset: {
-            width: 0,
-            height: 2,
-        },
-        shadowOpacity: 0.15,
-        shadowRadius: 3.84,
-        elevation: 3,
-    },
-    showAllIcon: {
-        color: colors.darkGray,
-        alignItems: "center",
-        justifyContent: "center",
     },
 })
 

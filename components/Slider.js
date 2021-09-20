@@ -62,6 +62,7 @@ const styles = StyleSheet.create({
         paddingVertical: 10,
     },
     scrollWrapper:{
+        scaleX:-1
     },
     sliderImage: {
         borderRadius: 32,
@@ -75,6 +76,7 @@ const styles = StyleSheet.create({
         // alignItems: "center",
         // justifyContent: "center"
         alignSelf: "center",
+        scaleX:-1
     },
     dotIconActive: {
         // top: 8,
