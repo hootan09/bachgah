@@ -15,6 +15,7 @@ import Details from './components/Details';
 import Profile from './components/Profile';
 import Liked from './components/Liked';
 import About from './components/About';
+import Splash from './components/Splash';
 
 Entypo.loadFont();
 MaterialCommunityIcons.loadFont();
@@ -75,6 +76,12 @@ const App = () => {
   return (
       <NavigationContainer>
         <Stack.Navigator>
+        <Stack.Screen
+            name="Splach" component={Splash} 
+            options={{
+              headerShown: false,
+            }}
+            />
           <Stack.Screen
             name="TabNavigator" component={TabNavigator} 
             options={{
