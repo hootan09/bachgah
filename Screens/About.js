@@ -290,6 +290,7 @@ const styles = StyleSheet.create({
         justifyContent: "space-between",
         alignItems: "center",
         marginHorizontal: 10,
+        marginVertical: 15,
     },
     phoneWrapper: {
         flexDirection: "column",
