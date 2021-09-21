@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import { StyleSheet, Text, View, SafeAreaView, Dimensions, Image, TouchableOpacity, ScrollView } from 'react-native'
+import { StyleSheet, Text, View, SafeAreaView, Dimensions, Image, TouchableOpacity, ScrollView, Linking } from 'react-native'
 import colors from '../assets/colors/colors'
 
 import Entypo from 'react-native-vector-icons/Entypo';
@@ -100,16 +100,35 @@ const About = ({navigation}) => {
                         <Text style={styles.bachgahAdressTxt}>● اطلاعات باشگاه</Text>
                         <View style={styles.addressDataWrapper}>
                             <View style={styles.phoneWrapper}>
-                                <Text style={[styles.adressTxt, {color: colors.white}]}>شماره تماس</Text>
-                                <View style={styles.addressIconWrapper}>
-                                    <Entypo name="phone" size={20} color={colors.gray} style={styles.addressIcon} />
+                                <View style={{flexDirection: "row", justifyContent: "center", alignItems: "center"}}>
+                                    <Text style={[styles.adressTxt, {color: colors.white}]}>شماره تماس</Text>
+                                    <View style={styles.addressIconWrapper}>
+                                        <Entypo name="phone" size={20} color={colors.gray} style={styles.addressIcon} />
+                                    </View>
                                 </View>
+                                <TouchableOpacity
+                                    onPress={() => Linking.openURL(`tel:${'09359578994'}`)}
+                                >
+                                    <View style={styles.phoneNumberTxtWrapper}>
+                                        <Text style={styles.phoneNumberTxt}>09359578994</Text>
+                                    </View>
+                                </TouchableOpacity>
                             </View>
                             <View style={styles.mapWrapper}>
-                                <Text style={styles.adressTxt}>آدرس باشگاه</Text>
-                                <View style={styles.addressIconWrapper}>
-                                        <Entypo name="map" size={20} color={colors.gray} style={styles.addressIcon} />
+                                <View style={{flexDirection: "row", justifyContent: "center", alignItems: "center"}}>
+                                    <Text style={styles.adressTxt}>آدرس باشگاه</Text>
+                                    <View style={styles.addressIconWrapper}>
+                                            <Entypo name="map" size={20} color={colors.gray} style={styles.addressIcon} />
+                                    </View>
                                 </View>
+                                <TouchableOpacity
+                                    onPress={()=> console.log('show on map!')}
+                                >
+                                    <View style={styles.mapButtonWrapper}>
+                                        <Feather name="arrow-left" size={16} color={colors.black} />
+                                        <Text style={styles.mapButtonTxt}>نمایش در نقشه</Text>
+                                    </View>
+                                </TouchableOpacity>
                             </View>
                         </View>
                     </View>
@@ -260,7 +279,7 @@ const styles = StyleSheet.create({
     },
     bachgahStuffWrapper: {},
     bachgahAddressWrapper: {
-        marginHorizontal: 15,
+        marginHorizontal: 10,
     },
     bachgahAdressTxt: {
         fontFamily: "IRANSansMobile_Bold",
@@ -270,14 +289,14 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         justifyContent: "space-between",
         alignItems: "center",
-        marginHorizontal: 25,
+        marginHorizontal: 10,
     },
     phoneWrapper: {
-        flexDirection: "row",
+        flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
         backgroundColor: colors.purple,
-        paddingHorizontal: 20,
+        paddingHorizontal: 15,
         paddingVertical: 10,
         borderRadius: 16,
         borderWidth: 1,
@@ -295,21 +314,48 @@ const styles = StyleSheet.create({
     adressTxt: {
         fontFamily: "IRANSansMobile_Medium",
         color: colors.black,
-        marginHorizontal: 5,
-        textShadowColor:colors.black,
-        textShadowOffset:{width: 1, height: 1},
-        textShadowRadius:7,
+        marginHorizontal: 15,
+        textShadowColor:colors.lightGray,
+        textShadowOffset:{width: 1.5, height: 1},
+        textShadowRadius:5,
     },
     mapWrapper: {
-        flexDirection: "row",
+        flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
         backgroundColor: colors.yellow,
-        paddingHorizontal: 20,
+        paddingHorizontal: 15,
         paddingVertical: 10,
         borderRadius: 16,
         borderWidth: 1,
         borderColor: colors.lightGray,
+    },
+    phoneNumberTxtWrapper: {
+        top: 5,
+        marginVertical: 5,
+        paddingVertical: 10,
+        paddingHorizontal: 25,
+        backgroundColor: colors.gray,
+        borderRadius: 10,
+    },
+    phoneNumberTxt: {
+        fontFamily: "IRANSansMobile(FaNum)_Medium",
+        color: colors.lightPurple,
+    },
+    mapButtonWrapper: {
+        flexDirection: "row",
+        justifyContent: "space-between",
+        alignItems: "center",
+        top: 5,
+        marginVertical: 5,
+        paddingVertical: 10,
+        paddingHorizontal: 20,
+        backgroundColor: colors.lightGray,
+        borderRadius: 10,
+    },
+    mapButtonTxt: {
+        fontFamily: "IRANSansMobile_Light",
+        paddingLeft: 5,
     },
 
 })
