@@ -40,7 +40,29 @@ const bestBachgahItems = [
     },
 ]
 
+const bachgahStuff = [
+    {
+        id: "1",
+        title: "پارکینگ",
+        icon: "flag",
+        color: "#808080",
+    },
+    {
+        id: "2",
+        title: "رستوران",
+        icon: "network",
+        color: "#808080",
+    },
+    {
+        id: "3",
+        title: "حمام",
+        icon: "leaf",
+        color: "#808080",
+    },
+]
+
 export {
     dailyParcticeItems,
     bestBachgahItems,
+    bachgahStuff,
 }

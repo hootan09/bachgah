@@ -9,12 +9,13 @@ import Entypo from 'react-native-vector-icons/Entypo';
 Feather.loadFont();
 Entypo.loadFont();
 
-const SectionList = ({navigation,title,data}) => {
+const SectionList = ({showAll,navigation,title,data}) => {
 
+    console.log(data);
     const renderDailyPracticeItems = ({item}) => {
         return(
             <TouchableOpacity
-                onPress={()=>navigation.navigate("Details", {item: item})}
+                onPress={()=>navigation?.navigate("Details", {item: item})}
             >
                 <View style={[styles.dailyPracticeItemWrapper, {backgroundColor: item.color}]}>
                     <View style={styles.iconItemsWrapper}>
@@ -25,20 +26,23 @@ const SectionList = ({navigation,title,data}) => {
             </TouchableOpacity>
         )
     }
-
     return (
         <View style={styles.dailyPracticeWrapper}>
-        <View style={styles.titleWrapper}>
-            <TouchableOpacity
-                onPress={()=> console.log("ShowAll")}
-            >
-                <View style={styles.showAllWrapper}>
-                    <View style={styles.showAllIconWrapper}>
-                        <Feather name="arrow-left" size={16} color={colors.black} style={styles.showAllIcon} />
-                    </View>
-                    <Text style={styles.showAllTxt}>نمایش همه</Text>
-                </View>
-            </TouchableOpacity>
+        <View style={[styles.titleWrapper, {justifyContent: showAll? "space-between" : "flex-end"}]}>
+                    {
+                        showAll && (
+                            <TouchableOpacity
+                                onPress={()=> console.log("ShowAll")}
+                            >
+                                <View style={styles.showAllWrapper}>
+                                    <View style={styles.showAllIconWrapper}>
+                                        <Feather name="arrow-left" size={16} color={colors.black} style={styles.showAllIcon} />
+                                    </View>
+                                    <Text style={styles.showAllTxt}>نمایش همه</Text>
+                                </View>
+                            </TouchableOpacity>
+                        )
+                    }
             <Text style={styles.dailyTitle}>● {title}</Text>
         </View>
 
@@ -61,6 +65,10 @@ const SectionList = ({navigation,title,data}) => {
 
 export default SectionList
 
+SectionList.defaultProps = {
+    showAll: true,
+  }
+
 const styles = StyleSheet.create({
     dailyPracticeWrapper: {
         marginHorizontal: 15,
@@ -74,6 +82,7 @@ const styles = StyleSheet.create({
     dailyTitle: {
         fontFamily: "IRANSansMobile_Bold",
         fontSize: 20,
+
     },
     showAllWrapper: {
         flexDirection: "row",

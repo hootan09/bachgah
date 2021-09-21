@@ -7,6 +7,9 @@ import Feather from 'react-native-vector-icons/Feather';
 import womanGym from '../assets/images/womanGym.png';
 
 import Stars from 'react-native-stars';
+import SectionList from '../components/SectionList';
+
+import {bachgahStuff} from '../assets/data/sectionListData';
 
 const Height = Dimensions.get('window').height;
 const Width = Dimensions.get('window').width;
@@ -14,7 +17,7 @@ const Width = Dimensions.get('window').width;
 
 Entypo.loadFont();
 Feather.loadFont();
-const About = () => {
+const About = ({navigation}) => {
 
     const [star, setStar] = useState('4.5');
 
@@ -82,8 +85,34 @@ const About = () => {
                                     <Feather name="arrow-left" size={20} color={colors.white} style={styles.buttonIcon} />
                                 </View>
                                 <Text style={[styles.gymClockTxt, {right: 15}]}>دریافت برنامه آنلاین</Text>
-                            </TouchableOpacity>
+                    </TouchableOpacity>
+                    
+                    {/* bachgah Stuff */}
+                    <View style={styles.bachgahStuffWrapper}>
+                        <SectionList
+                            title="امکانات باشگاه"
+                            data={bachgahStuff}
+                            showAll={false}
+                        />
+                    </View>
 
+                    <View style={styles.bachgahAddressWrapper}>
+                        <Text style={styles.bachgahAdressTxt}>● اطلاعات باشگاه</Text>
+                        <View style={styles.addressDataWrapper}>
+                            <View style={styles.phoneWrapper}>
+                                <Text style={[styles.adressTxt, {color: colors.white}]}>شماره تماس</Text>
+                                <View style={styles.addressIconWrapper}>
+                                    <Entypo name="phone" size={20} color={colors.gray} style={styles.addressIcon} />
+                                </View>
+                            </View>
+                            <View style={styles.mapWrapper}>
+                                <Text style={styles.adressTxt}>آدرس باشگاه</Text>
+                                <View style={styles.addressIconWrapper}>
+                                        <Entypo name="map" size={20} color={colors.gray} style={styles.addressIcon} />
+                                </View>
+                            </View>
+                        </View>
+                    </View>
 
                 </View>
             </ScrollView>
@@ -136,10 +165,10 @@ const styles = StyleSheet.create({
         top: 50,
     },
     bottomWrapper: {
+        top: -85,
         marginHorizontal: 20,
     },
     teacherWrapper: {
-        top: -85,
         marginHorizontal: 15,
         marginVertical: 8,
         borderWidth: 1,
@@ -182,7 +211,7 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         justifyContent: "center",
         alignItems: "center",
-        backgroundColor: colors.lightPurple,
+        backgroundColor: colors.orange,
         borderRadius: 12,
     },
     gymClockTxt: {
@@ -207,9 +236,8 @@ const styles = StyleSheet.create({
         color: colors.black
     },
     buttonWrapper: {
-        top: -80,
-        paddingVertical: 15,
-        // marginHorizontal: 5,
+        paddingVertical: 10,
+        marginHorizontal: 15,
         flexDirection: "row",
         justifyContent: "center",
         alignItems: "center",
@@ -229,6 +257,59 @@ const styles = StyleSheet.create({
     },
     buttonIcon: {
         // marginRight: 10,
+    },
+    bachgahStuffWrapper: {},
+    bachgahAddressWrapper: {
+        marginHorizontal: 15,
+    },
+    bachgahAdressTxt: {
+        fontFamily: "IRANSansMobile_Bold",
+        fontSize: 20,
+    },
+    addressDataWrapper: {
+        flexDirection: "row",
+        justifyContent: "space-between",
+        alignItems: "center",
+        marginHorizontal: 25,
+    },
+    phoneWrapper: {
+        flexDirection: "row",
+        justifyContent: "center",
+        alignItems: "center",
+        backgroundColor: colors.purple,
+        paddingHorizontal: 20,
+        paddingVertical: 10,
+        borderRadius: 16,
+        borderWidth: 1,
+        borderColor: colors.lightGray,
+    },
+    addressIconWrapper: {
+        height: 30,
+        width: 30,
+        backgroundColor: colors.white,
+        justifyContent: "center",
+        alignItems: "center",
+        borderRadius: 32,
+    },
+    addressIcon: {},
+    adressTxt: {
+        fontFamily: "IRANSansMobile_Medium",
+        color: colors.black,
+        marginHorizontal: 5,
+        textShadowColor:colors.black,
+        textShadowOffset:{width: 1, height: 1},
+        textShadowRadius:7,
+    },
+    mapWrapper: {
+        flexDirection: "row",
+        justifyContent: "center",
+        alignItems: "center",
+        backgroundColor: colors.yellow,
+        paddingHorizontal: 20,
+        paddingVertical: 10,
+        borderRadius: 16,
+        borderWidth: 1,
+        borderColor: colors.lightGray,
     },
 
 })
