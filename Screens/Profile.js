@@ -74,8 +74,10 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: colors.lightGray,
         marginTop: -20,
-        borderTopLeftRadius: 25,
-        borderTopRightRadius: 25,
+        borderTopLeftRadius: 32,
+        borderTopRightRadius: 32,
+        borderWidth: 1,
+        borderColor: colors.gray,
     },
     descriptionWrapper: {
         flex: 1,
@@ -89,7 +91,7 @@ const styles = StyleSheet.create({
         fontSize: 32,
         textShadowColor:colors.black,
         textShadowOffset:{width: 3, height: 3},
-        textShadowRadius:9,
+        textShadowRadius:12,
     },
     flatListWrapper: {
         width: Width * 0.8,
@@ -104,6 +106,16 @@ const styles = StyleSheet.create({
         alignItems: "center",
         backgroundColor: colors.white,
         borderRadius: 12,
+        borderColor: colors.gray,
+        borderWidth: 1,
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 0,
+            height: 2,
+        },
+        shadowOpacity: 0.15,
+        shadowRadius: 3.84,
+        elevation: 3,
     },
     buttonIconWrapper: {
         height: 40,
@@ -121,7 +133,7 @@ const styles = StyleSheet.create({
         fontSize: 16,
         textShadowColor:colors.black,
         textShadowOffset:{width: 3, height: 3},
-        textShadowRadius:5,
+        textShadowRadius:12,
     },
     iconPosition: {
         marginHorizontal: 10,
