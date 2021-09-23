@@ -84,7 +84,9 @@ const About = ({navigation}) => {
                                 <View style={styles.buttonIconWrapper}>
                                     <Feather name="arrow-left" size={20} color={colors.white} style={styles.buttonIcon} />
                                 </View>
-                                <Text style={[styles.gymClockTxt, {right: 15}]}>دریافت برنامه آنلاین</Text>
+                                <View style={{flex:1, paddingRight: 40, justifyContent: "center", alignItems: "center"}}>
+                                    <Text style={styles.gymClockTxt}>دریافت برنامه آنلاین</Text>
+                                </View>
                     </TouchableOpacity>
                     
                     {/* bachgah Stuff */}
@@ -256,9 +258,10 @@ const styles = StyleSheet.create({
     },
     buttonWrapper: {
         paddingVertical: 10,
+        paddingHorizontal: 10,
         marginHorizontal: 15,
         flexDirection: "row",
-        justifyContent: "center",
+        justifyContent: "flex-start",
         alignItems: "center",
         backgroundColor: colors.purple,
         borderRadius: 12,
@@ -270,7 +273,7 @@ const styles = StyleSheet.create({
         borderRadius: 16,
         justifyContent: "center",
         alignItems: "center",
-        right: 70,
+        // left: 10,
         borderColor: colors.lightGray,
         borderWidth: 2,
     },

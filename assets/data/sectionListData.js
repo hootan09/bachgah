@@ -61,8 +61,36 @@ const bachgahStuff = [
     },
 ]
 
+const buttonTxt = [
+    {
+        id: 1,
+        text: "می خوام کاهش وزن داشته باشم"
+    },
+    {
+        id: 2,
+        text: "می خوام تناسب اندامم رو حفظ کنم"
+    },
+    {
+        id: 3,
+        text: "می خوام عضله سازی کنم"
+    },
+    {
+        id: 4,
+        text: "می خوام کاهش وزن داشته باشم"
+    },
+    {
+        id: 5,
+        text: "می خوام تناسب اندامم رو حفظ کنم"
+    },
+    {
+        id: 6,
+        text: "می خوام عضله سازی کنم"
+    }
+]
+
 export {
     dailyParcticeItems,
     bestBachgahItems,
     bachgahStuff,
+    buttonTxt,
 }
